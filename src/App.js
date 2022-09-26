@@ -1,9 +1,8 @@
-
 import React from 'react';
-import {Switch,Route,HashRouter} from 'react-router-dom'
-import Home from './views/home'
-import About from './views/about'
-import './App.scss';
+import {Switch,Route,BrowserRouter} from 'react-router-dom'
+import index from './views/login/index'
+import 'antd/dist/antd.min.css';
+
 
 class App extends React.Component{
   constructor(props){
@@ -18,13 +17,12 @@ render(){
     // HashRouter URL带上#
    /* Switch用于匹配单个路由功能 */
    <div className='test'>
-    <h1>第一个花鼓</h1>
-   <HashRouter>
-    <Switch>  
-      <Route component={Home}  path='/'></Route>
-      <Route component={About}  path='/about'></Route>
+   <BrowserRouter>
+    <Switch> 
+      <Route component={index}  path='/'></Route>
+    
     </Switch>
-   </HashRouter>
+   </BrowserRouter>
    </div>
   );
 }

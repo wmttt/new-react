@@ -1,0 +1,28 @@
+@import './main.scss';
+
+.form-wrap{
+    display: flex;
+    align-items: center; //垂直居中
+    width:300px;
+    height:100vh;
+    margin:0 auto;
+    > div{     //最外层div的宽度
+        width:100%;
+    }
+}
+.form-header{
+    height:56px;
+    line-height: 56px;
+    color:white;
+    margin-bottom:10px;
+    .column{
+        float: left;
+        font-size:16px;
+    }
+    span{
+        float: right;
+        font-size:12px;
+        opacity: .3;
+        cursor: pointer;
+    }
+}
