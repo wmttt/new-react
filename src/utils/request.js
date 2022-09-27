@@ -1,9 +1,8 @@
 import  axios from 'axios'
-
-const service=axios.create({
-    baseURL:'devApi/',
+const   service=axios.create({
+    baseURL:process.env.REACT_APP_BASE_API, //如果去做了代理的话，就要用/devApi
     timeout:5000,
-    headers:{'X-Custom-Header':'foobar'}
+    headers:{ 'Content-Type': 'application/json;charset=UTF-8'},
 });
         //请求拦截
         service.interceptors.request.use(function(config){
@@ -19,3 +18,5 @@ const service=axios.create({
         },function(error){
             return Promise.reject(error)
         })
+
+export default service;

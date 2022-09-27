@@ -1,10 +1,20 @@
-import service from '../../src/utils/request'
+import request from '../../src/utils/request'
 /**
  * 登录接口
  */
 export function Login(data){
-  return service.request({
+  return request({
         url:"/api/login/login",
+        method:"post",
+        data,
+    })
+}
+/**
+ * 验证码
+ */
+ export function GetCode(data){
+  return request({
+        url:"",
         method:"post",
         data,
     })
