@@ -1,0 +1,9 @@
+
+//浏览器兼容性
+@mixin webkit($attr,$value) {
+    -webkit-#{$attr}:$value;
+    -moz-#{$attr}:$value;
+    -ms-#{$attr}:$value;
+    -o-#{$attr}:$value;
+    #{$attr}:$value;
+}

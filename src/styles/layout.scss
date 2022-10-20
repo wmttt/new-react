@@ -1,0 +1,33 @@
+@import './sassConfig.scss';
+
+.layout-wrap{
+    height:100vh;
+    
+}
+.layout-header{
+    height:75px;
+    background-color: #1bc573!important;
+    @include webkit(box-shadow,0 3px 16px 0 rgba(0,0,0,.1))
+}
+.layout-sider{
+    background-color: #040a31!important;
+    color:#ffffff;
+}
+.layout-main{
+    border:30px solid #ffffff;
+    background: #dccece;
+    padding:30px;
+}
+
+.logo{
+    display: flex;
+    height:83px;
+    align-items: center;
+    justify-content: center;
+    span{
+        display: block;
+        width:177px;
+        height:47px;
+        background:#1a2d3f
+    }
+}

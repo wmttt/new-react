@@ -25,8 +25,6 @@ export default class index extends Component {
       <div className="form-wrap">
        <div>
         {this.state.formType ==='login'? <Login loginOrRegister={this.loginOrRegister}></Login>:<Register loginOrRegister={this.loginOrRegister}></Register>}
-       
-        
        </div>
       </div>
     )

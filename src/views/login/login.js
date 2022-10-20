@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import '../../styles/login.scss'
+//增加白名单路由跳转
+import { withRouter } from 'react-router-dom';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input,Row ,Col,message } from 'antd';
 //验证一个工具类；
@@ -7,14 +9,15 @@ import { validate_password } from '../../utils/validate'
 //API 
 import {Login , GetCode} from '../../api/accout'
 import { name } from 'file-loader';
-
+// 
+import { setToken } from '../../utils/session';
 
 // 这个页面：
 // <Row gutter={13}>是两块col之前的间隔
 // block 自动扩到父容器或控制不超出。
 
-
-export default class login extends Component {
+//包裹白名单
+export default  withRouter  (class login extends Component {
     constructor(props) {
       super(props)
       this.state = {
@@ -26,8 +29,15 @@ export default class login extends Component {
     }
     //登录
      onFinish = (values) => {
-      console.log('可接受的form: ', values);
+     
       Login(values).then(response=>{
+        const data=response.data;
+        console.log('可接受的form: ', response.data.code);
+        if (data.code === '0000') {
+          setToken(data.data.token)
+          this.props.history.push('/dashborad')
+        }
+        
       }).catch(error=>{
 
       })
@@ -150,4 +160,4 @@ export default class login extends Component {
       
     )
   }
-}
+})

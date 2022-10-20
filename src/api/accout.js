@@ -19,3 +19,12 @@ export function Login(data){
         data,
     })
 }
+
+/**公司查询 */
+export function selectcompanyListByPage(data) {
+    return request({
+      url:  '/api/company/page',
+      method: 'post',
+      data
+    })
+  }
